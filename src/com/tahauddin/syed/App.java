@@ -31,6 +31,7 @@ public class App {
 			Employee employeeClonedObject = (Employee) employee.clone();
 			System.out.println("Original Object Hash Code "+ employee.hashCode());
 			System.out.println("Cloned   Object Hash Code "+ employeeClonedObject.hashCode());
+			// checking weather original object and cloned object hashcode are equal or not
 			System.out.println(employee.hashCode() == employeeClonedObject.hashCode());
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
@@ -39,6 +40,7 @@ public class App {
 		
 		
 		/**
+		 * calling serialization() to process serialization on employee object
 		 * 
 		 */
 		Employee serializationEmployee = serilizationMethod(employee);
@@ -47,10 +49,12 @@ public class App {
 		
 		/**
 		 * 
+		 * calling deserialization() to process deserialization on employee object
 		 */
 		Employee deserializationEmployee = deserializationMethod();
 		System.out.println("Deserialization is Done..");
 		System.out.println("Deserialization Object Hash Code " + deserializationEmployee.hashCode());
+		// checking weather both the objects hash code are equal or not
 		System.out.println(serializationEmployee == deserializationEmployee);
 		
 	}
